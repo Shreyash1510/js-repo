@@ -15,7 +15,7 @@
     * command will create a new folder on your system and initialize it as a git repository
 ***
 
-![Complete git flow](image.png)
+![git workflow image](image-2.png)
 
 
 7. ## git add <file> <file2>
