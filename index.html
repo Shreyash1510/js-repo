@@ -5,28 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Tutorial</title>
+    <style>
+        button{
+            width: 10vw;
+            height: 2vw;
+            margin: 5px;
+        }
+        .bgcolor{
+            background-color: rgb(236, 232, 236);
+        }
+        .textcolor{
+            color: rgb(26, 26, 27);
+        }
+        .handcursor{
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <h1> Welcome To Backend Journey MR.SPAS </h1>
     <h2> In This Part We Are Going To Learn JavaScript </h2>
     <div id="firstcontainer" class="container">
-        <button id="btnclick">
-
+        <button id="btnclick" onclick="clicked()"> The first button.
+            
         </button>
     </div>
-    <div class="container" id="tbtnclick">
-        <button id="btnclick2">
-
+    <div class="container" id="tbtnclick"> 
+        <button id="btnclick2" > The second button.
+                    
         </button>
     </div>
     <style>
-        button{
+        /* button{
             width: 20vw;
             height: 1vw;
-            margin: 10px;
+            margin: 5px;
             
-        }
+        } */
     
     </style>
     <script src="index.js"></script>

@@ -126,9 +126,47 @@ console.log(ndate.getTime());
 # 8. doc element methods (dom)
 + ```let docid = document.getElementById("firstcontainer");``` Fetch element with firstcontainer id
 
-
-
-
-
-
 + ```console.log(docid);```
+
++ ### element_on_which_add[0].classList.add("name_of_class_which_add")
+    ```let first_button_id = document.getElementById("btnclick");```
+
+    ```console.log(first_button_id);```
+
+    * ```first_button_id.classList.add("bgcolor");``` Add class property in element
+
+    * ```first_button_id.classList.remove("textcolor");``` Remove class property from element
++ ### inner text and html
+    * ```console.log(first_container.innerHTML)``` Return html of targeted element
+    * ```console.log(first_container.innerText)``` Return text of targeted element
+
++ ### query selector
+    * ```qsel = document.querySelector(".container")``` Return first container class
+    * ```qsel = document.querySelectorAll(".container")``` Return all container class
+    ***
+    ***
+# 9. Events
+## In html
++ here in html we have added ```onclick="clicked()"```
++ and in js file we have created a function ```clicked()```
+```
+function clicked(){
+    console.log("The button was clicked")
+}
+```
+```<button id="btnclick" onclick="clicked()"> Lorem ipsum dolor sit amet.```  
++ so whenever click on button will get message in console
+
+## Direct in js
+1. For click event
+```
+    second_button_id.addEventListener('click' ,function(){
+        console.log("The second button was clicked")
+})
+```
+2. For mouseover event
+```
+second_button_id.addEventListener("mouseover",function(){
+    console.log("Mouse on the second button was clicked")
+} )
+```

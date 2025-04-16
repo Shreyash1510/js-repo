@@ -107,7 +107,7 @@ for (let i = 1; i <= 25; i++) {
     // console.log(i);
 }
 
-s = 0;
+let s = 0;
 while (s < 19) {
     // console.log(s)
     s++
@@ -127,9 +127,58 @@ let ndate = new Date();
 // console.log(ndate.getTime());
 
 let docid = document.getElementById("firstcontainer");
-console.log(docid);
+// console.log(docid);
 
 let docclass = document.getElementsByClassName("container");
-console.log(docclass);
+// console.log(docclass);
 
-docclass[0].style.background = "grey"
+// docclass[0].style.background = "grey"
+
+
+let first_button_id = document.getElementById("btnclick");
+// console.log(first_button_id); 
+first_button_id.classList.add("textcolor");
+                        // OR
+// document.getElementById("btnclick").classList.add("textcolor");
+// first_button_id.classList.remove("textcolor");
+first_button_id.classList.add("bgcolor");
+first_button_id.classList.add("handcursor");
+
+
+
+                    // PRACTICED    
+/*
+let class_container = document.getElementsByClassName("container");   // find "container" named classes
+console.log(class_container);  // print classes on console
+class_container[0].classList.add("bgcolor"); // we have added "bgcolor" class in html head portion and calling here in js
+
+// newmergedclass = document.getElementsByClassName("container bgcolor");
+// console.log(newmergedclass);
+*/
+
+
+
+let first_container = document.getElementById("firstcontainer");
+// console.log(first_container.innerHTML)
+// console.log(first_container.innerText)
+
+qsel = document.querySelectorAll(".container")
+// console.log(qsel);
+
+function clicked(){
+    console.log("The first button was clicked")
+}
+
+let second_button_id = document.getElementById("btnclick2")
+// console.log(second_button_id);
+second_button_id.classList.add("bgcolor");
+second_button_id.classList.add("handcursor");
+
+
+second_button_id.addEventListener('click' ,function(){
+    console.log("The second button was clicked")
+})
+
+second_button_id.addEventListener("mouseover",function(){
+    console.log("Mouse on the second button was clicked")
+} )
