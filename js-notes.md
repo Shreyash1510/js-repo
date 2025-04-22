@@ -170,3 +170,44 @@ second_button_id.addEventListener("mouseover",function(){
     console.log("Mouse on the second button was clicked")
 } )
 ```
+***
+***
+# 10. Arrow function
+```
+function summ(a,b){
+    return a+b
+}
+            // OR we can also right using arrow function 
+            
+summ = (a,b) =>{
+    return a+b
+}
+
+```
+***
+***
+# 11. Set timeout and interval
+```
+ bmv = function(){
+    console.log("Timeout set for 2 seconds")
+} 
+setTimeout(bmv, 2000)
+// setInterval(bmv, 2000)    //for repeating responses
+
+                //OR
+
+setTimeout(function(){
+    console.log("fsdfdsfdfd")
+}, 2000) 
+
+```
+### timeout with event in js
+```
+second_button_id.addEventListener('click' ,function(){
+    setTimeout(function(){
+        second_button_id.innerHTML = "<b> Second button was clicked";
+    console.log("The second button was clicked");
+},2000);
+})
+
+```

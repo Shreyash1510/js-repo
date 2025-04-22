@@ -126,6 +126,8 @@ metharry = [1, "two" , true , 99 ] ;
 let ndate = new Date();
 // console.log(ndate.getTime());
 
+
+                      // DOM methods
 let docid = document.getElementById("firstcontainer");
 // console.log(docid);
 
@@ -137,6 +139,9 @@ let docclass = document.getElementsByClassName("container");
 
 let first_button_id = document.getElementById("btnclick");
 // console.log(first_button_id); 
+
+
+                    //class add in js
 first_button_id.classList.add("textcolor");
                         // OR
 // document.getElementById("btnclick").classList.add("textcolor");
@@ -163,11 +168,12 @@ let first_container = document.getElementById("firstcontainer");
 // console.log(first_container.innerText)
 
 qsel = document.querySelectorAll(".container")
+// console.log(document.querySelectorAll('.container')[1])
 // console.log(qsel);
 
-function clicked(){
-    console.log("The first button was clicked")
-}
+function clicked(){  // function for click button event                         
+    console.log("The first button was clicked");
+}  
 
 let second_button_id = document.getElementById("btnclick2")
 // console.log(second_button_id);
@@ -175,10 +181,103 @@ second_button_id.classList.add("bgcolor");
 second_button_id.classList.add("handcursor");
 
 
-second_button_id.addEventListener('click' ,function(){
-    console.log("The second button was clicked")
+                        //Add Events in js
+first_button_id.addEventListener("mouseover" , function(){
+    // console.log("Mouse on the first button")
 })
 
+second_button_id.addEventListener('click' ,function(){
+    second_button_id.innerHTML = "<b> Second button was clicked";
+    console.log("The second button was clicked");
+})
+            // now with 2 second delay with using settimeout
+/*
+second_button_id.addEventListener('click' ,function(){
+    setTimeout(function(){
+        second_button_id.innerHTML = "<b> Second button was clicked";
+    console.log("The second button was clicked");
+},2000);
+})
+*/
 second_button_id.addEventListener("mouseover",function(){
-    console.log("Mouse on the second button was clicked")
+    // console.log("Mouse on the second button")
 } )
+
+                    //Arrow function
+// function summ(a,b){
+//     return a+b
+// }
+        //OR
+summ = (a,b) =>{
+    return a+b
+}
+
+                    // set timeout and interval(same as timeout)
+ bmv = function(){
+    console.log("fsdfdsfdfd")
+} 
+// setTimeout(bmv, 2000)
+// setInterval(bmv, 2000)
+
+        //OR
+// setTimeout(function(){
+//     console.log("fsdfdsfdfd")
+// }, 2000) 
+
+
+                    // Various ways of code execution in js //
+function square(num){
+    let ans = num * num;
+    return "your answer is " +  ans
+    // return `Your answer is ${ans}`
+};
+n = 1
+// console.log(square(n));  
+
+let number = 2
+const sqans = square(number);
+// console.log(sqans);  
+
+
+// let num = 3;
+// console.log(square(num));  
+
+// console.log(square(4));
+
+                    // Nameste JS Variables & Functions
+// getname()
+// console.log(ex)
+
+/*
+var ex = 10
+
+function getname(){
+    console.log("Nameste JS")
+}
+
+
+getname()
+console.log(ex)
+console.log(getname)
+*/
+
+
+                    // Nameste JS functions hosting
+/*
+var aa = 10;                                       // 1
+
+b();                                               // 2
+c();                                               // 5
+console.log(aa);                                   // 8
+
+function b(){
+    var aa = 20                                    // 3
+    console.log(aa);                               // 4
+
+}
+function c(){
+    var aa = 30                                   // 6
+    console.log(aa);                              // 7
+
+}
+*/
