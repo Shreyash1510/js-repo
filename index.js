@@ -6,7 +6,7 @@
 
 // alert("Hemlo i am alert");   //commented this cause downside code wont executed if alert is on
 // document.write("Added text in webpage using js");3
-const a = 10;
+// const a = 10;
 // console.log(a);
 
 // Objects in js
@@ -63,6 +63,7 @@ function avg(a, b) {
 c1 = avg(2, 3)
 // console.log(c1)
 
+                            // If Else
 var age = 18
 if (age >= 18) {
     // console.log("You can drink feruchi drink");
@@ -83,6 +84,23 @@ else {
     // console.log("Race with fernando alonso ")
 }
 
+/*
+let aged = 55
+if (aged <18){
+    a = 10
+    console.log(a+=100)
+}
+else if (aged > 18 & aged < 50){
+    a = 20
+    console.log(a+=100)
+}
+else {
+    a = 30
+    console.log(a+=100)
+}
+*/
+
+                            // For and Foreach
 var arry = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 arry.forEach(element => {
@@ -215,9 +233,10 @@ summ = (a,b) =>{
                     // set timeout and interval(same as timeout)
  bmv = function(){
     console.log("fsdfdsfdfd")
-} 
-// setTimeout(bmv, 2000)
-// setInterval(bmv, 2000)
+}; 
+
+// setTimeout(bmv, 2000)                    // provide output after 2sec
+// setInterval(bmv, 2000)                   // provide output after 2sec and repeat same
 
         //OR
 // setTimeout(function(){
@@ -231,7 +250,7 @@ function square(num){
     return "your answer is " +  ans
     // return `Your answer is ${ans}`
 };
-n = 1
+n = 10
 // console.log(square(n));  
 
 let number = 2
@@ -264,7 +283,7 @@ console.log(getname)
 
                     // Nameste JS functions hosting
 /*
-var aa = 10;                                       // 1
+var aa = 100;                                       // 1
 
 b();                                               // 2
 c();                                               // 5
@@ -281,3 +300,158 @@ function c(){
 
 }
 */
+// console.log(a)
+
+
+                    // Nameste JS Tempral Dead Zone                 
+/*                    
+// console.log(la)            // Cannot access 'la' before initialization
+let la = 1;   
+// console.log(la)         
+
+// console.log(va)            // wil prpovide "undefined" output
+var va = 2;            
+*/
+
+                     // Nameste JS Scops ( Block and Global )
+/*
+var a = 1;
+let b = 2;
+const c = 3;
+{
+    var a = 1000;
+    let b = 2000;
+    const c = 3000;
+    console.log(a)
+    console.log(b)
+    console.log(c)
+
+}
+console.log(a)       // return 1000                           
+console.log(b)       // return 2                       
+console.log(c)       // return 3
+
+function sq(numb){
+    // let bans = numb*numb
+    // console.log(numb*numb)
+    return numb*numb
+}
+console.log(sq(6))
+*/
+
+                                                // NAMESTE JS CLOSURES
+/*
+
+function x(){
+    var a  = 10
+    function y(){
+        console.log(a)
+
+    }
+    y()                 // nedd to call inside parent closer only
+}
+// y()                  //will throw error ( y is not defined )
+x()
+
+*/
+
+// function xx(){
+//     var aa = "Output after 3 seconds"
+//     setTimeout(function(){
+//         console.log(aa)
+//     }, 3000
+//     )
+// }
+// xx()
+
+// function outer(){
+//     var a = 150
+//     function inner(){
+//         console.log(a);
+//     }
+//     inner();                             // call inner function
+// }
+// outer()
+
+
+// function outer(){
+//     var a = 150
+//     function inner(){
+//         console.log(a);
+//     }
+//     return inner;                            // return or store inner function to the outer
+// }
+                                // method one to get output
+// outer()();                              
+//                                          // Explaination of outer()()
+// outer()                                  //by first () ->  outer will get inner function & second () --> will run inner() which is just stored in outer()
+// console.log(outer());                   // output if run call outer function for first time 
+// outer()()                               //second () --> will run inner()
+//
+//                              // Method two to get output
+//                                       // otherwise we can use below instead of ()()
+// var close = outer();                     
+// close()                                  
+
+
+                                // Closure with parameter passed
+// function outer(b){
+//     var a = 150
+//     function inner(){
+//         console.log(a, b);
+//     }
+//     return inner;                            // return or store inner function to the outer
+// }
+
+// var close = outer("hey");                     
+// close();   
+
+
+                                            // Counter created using closure
+// function counter(){
+//     var cn = 1;
+//     function inccounter(){
+//         cn++
+//         console.log(cn)
+//     }
+//     inccounter()
+// }
+// counter();
+
+                                        // OR
+
+// function counter(){
+//     var cn = 1;
+//     return function inccounter(){
+//         cn++
+//         console.log(cn)
+//     }
+  
+// }
+// counter()()
+
+
+// If we call both functions before creating them then function expression expr() will throw an error as initially its value was 'undefined'.
+// fun_stat();      // will return function 
+// expr();         // Uncaught TypeError: expr is not a function
+
+// Function Statement     OR    Function Declaration
+// If we write a function keyword along with its name.
+function fun_stat(){
+    console.log("It's a Function Statement OR Function Declaration")
+}
+fun_stat();
+
+// Function Expression
+// If we use function as a value for any variable or key.
+var expr = function (){
+    console.log("It's a Function Expression")
+}
+expr();
+
+//Anonymous Function
+// A function without name.
+//  Uncaught SyntaxError: Function statements require a function name
+// function (){
+//     console.log("sdd")
+// } 

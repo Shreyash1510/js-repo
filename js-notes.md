@@ -211,3 +211,25 @@ second_button_id.addEventListener('click' ,function(){
 })
 
 ```
+# 12. Block scope in js
+
+```
+{
+    var a = 1000;
+    let b = 2000;
+    const c = 3000;
+    console.log(a)                 // we'll get output in console
+    console.log(b)                 // we'll get output in console
+    console.log(c)                 // we'll get output in console
+
+}
+console.log(a)                    // we'll get output in console
+console.log(b)                    // Error
+console.log(c)                    // Error
+
+```
+### As [b & c] are in "BLOCK SCOPE" and [a] in "GLOBAL SCOPE"
+**[var] is part of GLOBAL SCOPE and [let & const] are part of block scope**
+![alt text](image-8.png)
+***
+![alt text](image-9.png)
