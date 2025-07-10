@@ -221,6 +221,14 @@ second_button_id.addEventListener("mouseover",function(){
     // console.log("Mouse on the second button")
 } )
 
+
+
+                                    // Class add to Third button
+
+document.getElementById("third_button").classList.add("button")
+document.getElementById("third_button").classList.add("bgcolor")
+document.getElementById("third_button").classList.add("handcursor")
+
                     //Arrow function
 // function summ(a,b){
 //     return a+b
@@ -340,6 +348,16 @@ console.log(sq(6))
 */
 
                                                 // NAMESTE JS CLOSURES
+// function user(){
+//     let user = "SPAS"
+
+//     function message() {
+//         console.log(user + " It's Canada GP Time")
+//     }
+//     message()
+// }
+// user()
+
 /*
 
 function x(){
@@ -373,7 +391,7 @@ x()
 // }
 // outer()
 
-
+                            // OR
 // function outer(){
 //     var a = 150
 //     function inner(){
@@ -381,8 +399,9 @@ x()
 //     }
 //     return inner;                            // return or store inner function to the outer
 // }
-                                // method one to get output
+//                                 // method one to get output
 // outer()();                              
+
 //                                          // Explaination of outer()()
 // outer()                                  //by first () ->  outer will get inner function & second () --> will run inner() which is just stored in outer()
 // console.log(outer());                   // output if run call outer function for first time 
@@ -395,16 +414,19 @@ x()
 
 
                                 // Closure with parameter passed
-// function outer(b){
+// function outerpar(b){
 //     var a = 150
 //     function inner(){
 //         console.log(a, b);
 //     }
+//     // inner()
 //     return inner;                            // return or store inner function to the outer
 // }
-
-// var close = outer("hey");                     
+// outerpar(1500)
+// var close = outerpar("hey");                     
 // close();   
+                            // OR
+// outerpar(1500)()
 
 
                                             // Counter created using closure
@@ -431,23 +453,23 @@ x()
 // counter()()
 
 
-// If we call both functions before creating them then function expression expr() will throw an error as initially its value was 'undefined'.
-// fun_stat();      // will return function 
+// If we call functions expression before creating it then function expression expr() will throw an error as initially its value was 'undefined'.
+// fun_stat();      // finction statement will return function  
 // expr();         // Uncaught TypeError: expr is not a function
 
 // Function Statement     OR    Function Declaration
 // If we write a function keyword along with its name.
-function fun_stat(){
-    console.log("It's a Function Statement OR Function Declaration")
-}
-fun_stat();
+// function fun_stat(){
+//     console.log("It's a Function Statement OR Function Declaration!")
+// }
+// fun_stat();
 
 // Function Expression
 // If we use function as a value for any variable or key.
-var expr = function (){
-    console.log("It's a Function Expression")
-}
-expr();
+// var expr = function (){
+//     console.log("It's a Function Expression!")
+// }
+// expr();
 
 //Anonymous Function
 // A function without name.
@@ -455,3 +477,227 @@ expr();
 // function (){
 //     console.log("sdd")
 // } 
+
+
+                                            // First - Class Function OR Call-Back Function
+                                    // (FOR EXECUTING FUNCTION INSIDE FUNCTION)
+// A function passed as a value , declared to a variable, and function returned from another function .
+// Store them in a variable
+// Send them to another function
+// Return them from a function
+//                                  OR
+// A callback function is a function that is passed as an argument to another function, and it gets called later
+
+//  function first_class(upper_input){
+//     return function(inner_input){
+//         return upper_input * inner_input
+//     }
+// }
+
+// var demo = first_class(2)
+// console.log(demo(5))
+
+
+
+                        //  OR
+// let mainfn = function (){
+//     console.log("welcome brother")
+// }
+
+// function subfn(fntocall){
+//     return fntocall(); 
+// }
+// subfn(mainfn);
+// mainfn()
+/*
+ Here we are calling "subfn"
+"subfn" is taking one parameter i.e "fntocall" and by return statement is calling that parameter
+ we are providing "mainfn" as a argument to "subfn" function 
+ so at the end our "mainfn" is getting called and returning "welcome brother" by console statement
+*/
+
+
+
+                        //  OR
+// function welcome(){
+//     console.log("Hellow Joinie")
+// }
+
+// function joinie(){
+//     return welcome()
+// }
+
+// joinie()
+// welcome()
+
+
+// var onefun = function (){
+//     console.log("heyyyyyyyyyyyyyyyyyyyyyy!")
+// }
+
+// var elsefun = function (paratake){
+//     return paratake()
+// }
+// elsefun(onefun)                      //onefune is first class function
+// // onefun()
+
+
+
+document.getElementById("third_button").addEventListener("click",function(){
+    // alert("button is clicked");
+    // console.error("third button is clicked");
+    console.warn("third button is clicked");
+
+})
+
+function clicked_message() {
+    console.warn("The fourth button was clicked");
+}
+
+
+// clicked_message()
+document.getElementById("fourth_button").addEventListener("click", clicked_message)
+
+                    // OR
+// document.getElementById("fourth_button").addEventListener("click", function (){
+//     alert("bhai error aavi gyo");
+// })
+
+                    // OR
+// console.log("start");
+
+// setTimeout(function vinfast() {
+//     console.error("vinfast is coming in india");
+// }, 5000);
+
+// console.warn("end");   
+
+
+                    // OR
+// console.warn("start");
+
+// document.getElementById("fourth_button").addEventListener("click" , function () {
+//     console.warn("continue button is click")
+// })     
+
+// console.warn("end");
+
+// now here [EVENT LOOP] will run and see if [Call Stack] is empty then it check whether any call back function in present in [Callback Queue]
+// in our case cbfn() is present in [callback queue] as its a call back function, so it will move into [Call Stack] and got quickly executed
+// and return "Example button is clicked" in console
+
+// console.warn("Console Log started!");      // 1
+
+// setTimeout(function vinfast() {            // 4
+//     console.log("settimeout function is executed at last as it was in [CALL-BACK QUEUE]");
+// }, 5000);
+
+// fetch("https//api.netflix.com")            // 3
+// .then(function microcall() {
+//     console.error("fetfetch api(categorised as [PROMISE OPERATION]) function executed first as it was in [MICROTASK QUEUE]");
+// })
+
+// console.warn("Console Log Ended!");         // 2
+
+
+                                        // Current DATE
+// let startDate = new Date();
+// console.log(startDate);
+
+                            // HIGHER ORDER FUNCTION
+// A function which takes another function as an argument or returns a function from it. 
+
+// function normalfun() {
+//     console.log("its normal function")
+// }
+
+// function HigherOrderFun(funparameter) {
+//     funparameter ()
+//     console.log("as it taking another function as an atrgument so its a HIGHER ORDER FUNCTION")
+    
+//     // return funparameter ()
+// }
+// HigherOrderFun(normalfun)
+
+
+                                    //  MAP Function (Transforms each item)
+const dummyarry = [5, 55, 44, 15]
+console.log(dummyarry)
+                                        // [1]By NORMAL fn DECLARATION
+// function doubler(x) {
+//     return x*2            // convert into double
+// }
+// console.log(dummyarry.map(doubler))
+
+                                        // [2] BY ARROW FUNCTION
+//// console.log(dummyarry.map(x => x*2))
+
+                                        // [3] BY ARROW FUNCTION SEPERATE VARIABLE
+//// const out = dummyarry.map(x => x*2)
+//// console.log(out)
+// function binery(x) {
+//     return x.toString(2)     // convert into binary
+// }
+
+// console.log(dummyarry.map(binery))
+
+
+                                    //  FILTER Function  (Selects items based on condition)
+const farr = [5,1,3,2,6]
+
+// function isodd(x) {
+//     return x % 2              //as in js 1 = True & 0 = False 
+//                              // so here as odd number's remainder will always come as 1, which means True in js
+//                             // we are printing odd values i.e, 5, 1, 3 (True = Remainder is 1 ) 
+// }
+                                        // OR ARROW FUNCTION
+//// console.log(farr.filter(x => x%2))
+
+// function iseven(x) {
+//     return x % 2 ===0        // return where remainder is equals to 0
+// }
+//// const output = farr.filter(isodd)
+//// console.log(output)
+
+// console.log(farr.filter(isodd))
+// console.log(farr.filter(iseven))
+
+
+                                    //  Reduce Function  (used to combine all elements of an array into a single value)
+
+const rarray = [1,3,6,5,3,2] 
+
+// console.log(rarray.reduce(function (acc, curr) {
+//     acc = acc + curr;
+//     return acc;
+// }),)
+
+/*
+
+| Step | acc | curr | acc + curr |
+| ---- | --- | ---- | ---------- |
+| 1    | 1   | 3    | 4          |
+| 2    | 4   | 6    | 10         |
+| 3    | 10  | 5    | 15         |
+| 4    | 15  | 3    | 18         |
+| 5    | 18  | 2    | 20         |
+
+*/
+
+// const rarraymax = [100,200,300,400,500] 
+
+// console.log(rarraymax.reduce(function(currt, nextcurr) {
+//     if (nextcurr > currt){
+//         currt = nextcurr;
+//     }
+//     return currt;
+// }))
+
+// const users = [
+//     {firstname: "MAX", lastname: "VERSTAPPEN", age:26},
+//     {firstname: "KIMI", lastname: "ANNOTELLI", age:75},
+//     {firstname: "CHARLES", lastname: "LECLARC", age:50},
+//     {firstname: "LANDO", lastname: "NORRICE", age:26},
+// ];
+
+// console.log(users.map(x => x.firstname + " " + x.lastname));
